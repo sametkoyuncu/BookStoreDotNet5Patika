@@ -2,7 +2,9 @@ using System;
 using System.Linq;
 using AutoMapper;
 using WebApi.DBOperations;
-namespace WebApi.BookOperations.CreateBook
+using WebApi.Entities;
+
+namespace WebApi.Application.BookOperations.Commands.CreateBook
 {
     public class CreateBookCommand
     {
