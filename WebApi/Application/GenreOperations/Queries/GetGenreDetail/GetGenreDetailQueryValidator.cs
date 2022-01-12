@@ -1,1 +1,12 @@
-https://youtu.be/34NFUm60Dps?t=1485
+using FluentValidation;
+
+namespace WebApi.Application.GenreOprerations.Queries.GetGenreDetail
+{
+    public class GetGenreDetailQueryValidator : AbstractValidator<GetGenreDetailQuery>
+    {
+        public GetGenreDetailQueryValidator()
+        {
+            RuleFor(query => query.Id).GreaterThan(0);
+        }
+    }
+}

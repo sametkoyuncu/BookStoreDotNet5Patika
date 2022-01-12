@@ -4,14 +4,14 @@ using System.Linq;
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.GenreOprerations.Queries.GenreDetail
+namespace WebApi.Application.GenreOprerations.Queries.GetGenreDetail
 {
-    public class GenreDetailQuery
+    public class GetGenreDetailQuery
     {
         public int Id { get; set; }
         private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public GenreDetailQuery(BookStoreDbContext context, IMapper mapper)
+        public GetGenreDetailQuery(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
