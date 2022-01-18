@@ -12,7 +12,7 @@ using WebApi.Application.BookOperations.Queries.GetBookDetail;
 using WebApi.Application.BookOperations.Queries.GetBooks;
 using WebApi.DBOperations;
 
-namespace WebApi.AddControllers
+namespace WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]s")]
@@ -98,11 +98,11 @@ namespace WebApi.AddControllers
             UpdateBookCommand command = new UpdateBookCommand(_context);
             command.Id = id;
             command.Model = updatedBook;
+
             UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
             validator.ValidateAndThrow(command);
+
             command.Handle();
-
-
             return Ok();
         }
 
