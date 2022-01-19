@@ -21,6 +21,7 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
             // gelen veri default değer mi? yani boş mu gelmiş?
             // eğer öyle değilse geleni, öyleyse eski veriyi yaz
             book.GenreId = Model.GenreId != default ? Model.GenreId : book.GenreId;
+            book.AuthorId = Model.AuthorId != default ? Model.AuthorId : book.AuthorId;
             book.Title = Model.Title != default ? Model.Title : book.Title;
 
             _dbContext.SaveChanges();
@@ -31,5 +32,6 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
     {
         public string Title { get; set; }
         public int GenreId { get; set; }
+        public int AuthorId { get; set; }
     }
 }

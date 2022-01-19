@@ -59,6 +59,7 @@ namespace WebApi.DBOperations
                         // Id = 1,
                         Title = "Lean Startup",
                         GenreId = 1,
+                        AuthorId = 1,
                         PageCount = 200,
                         PublishDate = new DateTime(2001, 02, 06)
                     },
@@ -67,6 +68,7 @@ namespace WebApi.DBOperations
                         // Id = 2,
                         Title = "Herland",
                         GenreId = 2,
+                        AuthorId = 1,
                         PageCount = 250,
                         PublishDate = new DateTime(2010, 03, 12)
                     },
@@ -75,6 +77,7 @@ namespace WebApi.DBOperations
                         // Id = 3,
                         Title = "Dune",
                         GenreId = 2,
+                        AuthorId = 3,
                         PageCount = 250,
                         PublishDate = new DateTime(2011, 12, 12)
                     });
