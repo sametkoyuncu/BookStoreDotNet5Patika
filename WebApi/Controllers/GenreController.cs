@@ -23,7 +23,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetGenres()
+        public IActionResult GetGenres()
         {
             GetGenresQuery query = new GetGenresQuery(_context, _mapper);
             var obj = query.Handle();
@@ -31,7 +31,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("id")]
-        public ActionResult GetGenreDetail(int id)
+        public IActionResult GetGenreDetail(int id)
         {
             GetGenreDetailQuery query = new GetGenreDetailQuery(_context, _mapper);
             query.Id = id;
