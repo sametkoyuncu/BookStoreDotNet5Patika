@@ -17,6 +17,27 @@ namespace WebApi.DBOperations
                     return;
                 }
 
+                context.Authors.AddRange(
+                    new Author
+                    {
+                        FirstName = "John",
+                        LastName = "Doe",
+                        BirthDate = new DateTime(1994, 02, 06)
+                    },
+                    new Author
+                    {
+                        FirstName = "Jane",
+                        LastName = "Lorem",
+                        BirthDate = new DateTime(1987, 12, 26)
+                    },
+                    new Author
+                    {
+                        FirstName = "Jess",
+                        LastName = "Ipsum",
+                        BirthDate = new DateTime(1976, 01, 11)
+                    }
+                );
+
                 context.Genres.AddRange(
                     new Genre
                     {
