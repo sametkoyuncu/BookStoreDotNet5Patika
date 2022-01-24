@@ -43,6 +43,11 @@ namespace WebApi.Common
             CreateMap<Author, AuthorDetailViewModel>();
             CreateMap<CreateAuthorModel, Author>();
 
+            // /* USER MAPPING */
+            // CreateMap<User, UsersViewModel>();
+            // CreateMap<User, UserDetailViewModel>();
+            CreateMap<CreateUserModel, User>();
+
         }
     }
 }
