@@ -8,6 +8,7 @@ using WebApi.Application.BookOperations.Queries.GetBooks;
 using WebApi.Application.GenreOprerations.Commands.CreateGenre;
 using WebApi.Application.GenreOprerations.Queries.GetGenreDetail;
 using WebApi.Application.GenreOprerations.Queries.GetGenres;
+using WebApi.Application.UserOperations.Commands.CreateUser;
 using WebApi.Entities;
 
 namespace WebApi.Common

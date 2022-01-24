@@ -1,9 +1,10 @@
 using AutoMapper;
-using AutoMapper.Configuration;
 using Microsoft.AspNetCore.Mvc;
-using WebApi.Application.BookOperations.Commands.CreateBook;
-// using Microsoft.Extensions.Configuration;
+using WebApi.Application.UserOperations.Commands.CreateUser;
+using Microsoft.Extensions.Configuration;
 using WebApi.DBOperations;
+using WebApi.Application.UserOperations.Commands.CreateToken;
+using WebApi.TokenOperations.Models;
 
 namespace WebApi.Controllers
 {
@@ -29,6 +30,16 @@ namespace WebApi.Controllers
             command.Handle();
 
             return Ok();
+        }
+
+        [HttpPost("connect/token")]
+        public ActionResult<Token> CreateToken([FromBody] CreateTokenModel login)
+        {
+            CreateTokenCommand command = new CreateTokenCommand(_context, _mapper, _configuration);
+            command.Model = login;
+            var token = command.Handle();
+
+            return token;
         }
     }
 }
