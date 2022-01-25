@@ -5,17 +5,17 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
 {
     public class UpdateBookCommand
     {
-        private readonly IBookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _context;
         public int Id { get; set; }
         public UpdateBookModel Model = new UpdateBookModel();
         public UpdateBookCommand(IBookStoreDbContext context)
         {
-            _dbContext = context;
+            _context = context;
         }
 
         public void Handle()
         {
-            var book = _dbContext.Books.SingleOrDefault(b => b.Id == Id);
+            var book = _context.Books.SingleOrDefault(b => b.Id == Id);
             if (book is null)
                 throw new InvalidOperationException("Kitap bulunamadı!");
             // gelen veri default değer mi? yani boş mu gelmiş?
@@ -24,7 +24,7 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
             book.AuthorId = Model.AuthorId != default ? Model.AuthorId : book.AuthorId;
             book.Title = Model.Title != default ? Model.Title : book.Title;
 
-            _dbContext.SaveChanges();
+            _context.SaveChanges();
         }
     }
 

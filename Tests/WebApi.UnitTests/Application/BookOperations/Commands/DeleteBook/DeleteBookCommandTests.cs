@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using AutoMapper;
 using FluentAssertions;
 using WebApi.Application.BookOperations.Commands.DeleteBook;
